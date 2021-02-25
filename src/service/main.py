@@ -1,21 +1,17 @@
-import sys
-import pygame
-from IPWebCam import *
+import urllib
+import cv2
+import numpy as np
+import time
+import urllib.request
 
-pygame.init()
+url = 'http://192.168.68.103:8080/photo.jpg'
 
-clock = pygame.time.Clock()
-screen = pygame.display.set_mode((176,144))
+while True:
+  imgResp = urllib.request.urlopen(url)
+  imgNp = np.array(bytearray(imgResp.read()), dtype=np.uint8)
+  img = cv2.imdecode(imgNp, -1)
 
-ipcam = IPWEBCAM('192.168.68.103:8080')
+  cv2.imshow('IPWebcam', img)
 
-run = True
-while run:
-  for event in pygame.event.get():
-    if event.type == pygame.QUIT:
-      run = False
-      pygame.quit()
-      sys.exit()
-  screen.blit(ipcam.get_pygame_image(),(0,0))
-  pygame.display.flip()
-  clock.tick(0)
+  if cv2.waitKey(1) & 0xFF == ord('q'):
+    break
