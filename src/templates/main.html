@@ -8,7 +8,10 @@
     <script src="{{ url_for('static',filename='script/script.js') }}"> </script>
 </head>
 <body>
-<h1>Vidéo surveillance</h1>
+<header>
+    <h1>Vidéo surveillance</h1>
+</header>
+
 
 <div class="container">
     <div class="iframe-container">
@@ -19,22 +22,27 @@
 <div class="container">
     <div class="row">
         <div class="column">
-            <div class="titleBox"><h3>Dernières activités</h3></div>
+            <div class="titleBox"><h3>Vos actions</h3></div>
             <button onclick="takePic()">Prendre une photo</button>
-            <button>voir dernière activité</button>
-            <button>voir dernière activité</button>
-            <button>voir dernière activité</button>
+            <button onclick="showActivity()">voir dernières activités</button>
+            <button onclick="showParam()">paramètres</button>
+
+            <div class="activity" id="activity">
+                <button>voir dernière activité</button>
+                <button>voir dernière activité</button>
+                <button>voir dernière activité</button>
+                <button>voir dernière activité</button>
+            </div>
+
         </div>
         <div class="column">
-            <div class="titleBox"><h3>paramètres</h3></div>
-            <button onclick="showParam()">paramètres</button>
+            <div class="container param" id="param">
+                <div class="iframe-container">
+                    <h3>paramètres</h3>
+                    <iframe src="http://192.168.68.103:8080/settings_window.html"></iframe>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
-
-<div class="container param" id="param">
-    <div class="iframe-container">
-        <iframe src="http://192.168.68.103:8080/settings_window.html"></iframe>
     </div>
 </div>
 
