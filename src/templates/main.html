@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>test webcam IP</title>
-    <style type="text/css" ></style>
-    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='style/style.css') }}">
-    <script src="{{ url_for('static',filename='script/script.js') }}"> </script>
+    <style type="text/css"></style>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style/style.css') }}">
+    <script src="{{ url_for('static',filename='script/script.js') }}"></script>
 </head>
 <body>
 <header>
@@ -16,58 +16,62 @@
     </div>
 </header>
 
-
-<div class="container">
-    <div class="iframe-container">
-        <iframe width="560" height="315" frameborder="0" src="http://192.168.68.103:8080/videofeed"></iframe>
-    </div>
+<div class="superCol left">
+    <div class="container">
+        <div class="iframe-container">
+            <iframe id="snap" width="560" height="315" frameborder="0" style="display: none"></iframe>
+            <iframe id="live" width="560" height="315" frameborder="0"
+                    src="http://192.168.68.103:8080/videofeed"></iframe>
+        </div>
 
         <div class="title">
-                <ul>
-                    <li>
-                        <h2>Vidéo en direct</h2>
-                        <img class="img_live" src="img/live.png" alt="img">
-                        <h3><a>Live</a></h3>
-                    </li>
-                </ul>
+            <ul>
+                <li>
+                    <h2>Vidéo en direct</h2>
+<!--                    <img class="img_live" src="img/live.png" alt="img">-->
+                    <h3>
+                        <button onclick="showVideo('http://192.168.68.103:8080/videofeed')">Live</button>
+                    </h3>
+                </li>
+            </ul>
         </div>
+    </div>
 
-    
-
-</div >
-
-<div class="historique">
-    <u><h2 class="date">Aujourd'hui</h2>
-        <h2 class="date">Hier</h2>
-    </u>
-</div>
-
-<div class="container">
-    <div class="row">
-        <div class="column">
-            <div class="titleBox"><h3>Vos actions</h3></div>
-            <button onclick="takePic()">Prendre une photo</button>
-            <button onclick="showActivity()">voir dernières activités</button>
-            <button onclick="showParam()">paramètres</button>
-
-            <div class="activity" id="activity">
-                <button>voir dernière activité</button>
-                <button>voir dernière activité</button>
-                <button>voir dernière activité</button>
-                <button>voir dernière activité</button>
+    <div class="container">
+        <div class="row">
+            <div class="column">
+                <div class="titleBox"><h3>Vos actions</h3></div>
+                <button onclick="takePic()">Prendre une photo</button>
+                <button onclick="showActivity()">voir dernières activités</button>
+                <button onclick="showParam()">paramètres</button>
+                <div class="activity" id="activity">
+                    <button onclick="showVideo('http://127.0.0.1:5000/get-video/franklin.mp4')">voir dernière activité</button>
+                    <button onclick="showVideo('http://127.0.0.1:5000/get-video/deamon.mp4')">voir dernière activité</button>
+                    <button>voir dernière activité</button>
+                    <button>voir dernière activité</button>
+                </div>
             </div>
-
-        </div>
-        <div class="column">
-            <div class="container param" id="param">
-                <div class="iframe-container">
-                    <h3>paramètres</h3>
-                    <iframe src="http://192.168.68.103:8080/settings_window.html"></iframe>
+            <div class="column">
+                <div class="container param" id="param">
+                    <div class="iframe-container">
+                        <h3>paramètres</h3>
+                        <iframe src="http://192.168.68.103:8080/settings_window.html"></iframe>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+<div class="superCol right">
+    <div class="historique">
+        <u>
+            <h2 class="date">Aujourd'hui</h2>
+            <h2 class="date">Hier</h2>
+        </u>
+    </div>
+</div>
+
 
 </body>
 </html>

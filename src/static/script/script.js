@@ -24,6 +24,16 @@ function showActivity () {
     }
 }
 
+function showVideo (url) {
+    let live = document.getElementById("live");
+    let snap = document.getElementById("snap");
+    if (snap.style.display === "none") {
+        live.style.display = "none";
+        snap.style.display = "block";
+    }
+    snap.src = url;
+}
+
 function onStartedDownload(id) {
     console.log(`Started downloading: ${id}`);
 }

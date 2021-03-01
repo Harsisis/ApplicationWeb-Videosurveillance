@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8e74b2db-5d90-4e1b-9881-eef9fa54c4ff" name="Default Changelist" comment="v1">
-      <change afterPath="$PROJECT_DIR$/src/templates/img/baseline_settings_white_24dp.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/templates/img/live.png" afterDir="false" />
+    <list default="true" id="2b9d298b-09b4-40d0-a0a0-28b8089d0a05" name="Default Changelist" comment="ze style">
+      <change afterPath="$PROJECT_DIR$/src/static/client/vid/deamon.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/static/client/vid/franklin.mp4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/ApplicationWeb-Videosurveillance.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ApplicationWeb-Videosurveillance.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/static/script/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/static/script/script.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/static/style/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/static/style/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/templates/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/templates/main.html" afterDir="false" />
     </list>
@@ -17,11 +21,15 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1p1mDAOBX82zKUdmcEvi6yzCo0Q" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -31,7 +39,7 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -121,11 +129,12 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="version 1" />
     <MESSAGE value="v1" />
     <option name="LAST_COMMIT_MESSAGE" value="v1" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/ApplicationWeb_Videosurveillance$main.coverage" NAME="main Coverage Results" MODIFIED="1614596718147" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/ApplicationWeb_Videosurveillance$main.coverage" NAME="main Coverage Results" MODIFIED="1614606224838" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
   </component>
 </project>
