@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2b9d298b-09b4-40d0-a0a0-28b8089d0a05" name="Default Changelist" comment="ze style">
-      <change beforePath="$PROJECT_DIR$/src/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.py" afterDir="false" />
+    <list default="true" id="8e74b2db-5d90-4e1b-9881-eef9fa54c4ff" name="Default Changelist" comment="v1">
+      <change afterPath="$PROJECT_DIR$/src/templates/img/baseline_settings_white_24dp.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/templates/img/live.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/static/style/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/static/style/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/templates/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/templates/main.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -10,49 +13,31 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings">
-    <execution />
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Python Script" />
-      </list>
-    </option>
-  </component>
-  <component name="FlaskConsoleOptions" custom-start-script="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))">
-    <envs>
-      <env key="FLASK_APP" value="app" />
-    </envs>
-    <option name="myCustomStartScript" value="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))" />
-    <option name="myEnvs">
-      <map>
-        <entry key="FLASK_APP" value="app" />
-      </map>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1oz4B4fvrS4b69JwFl5SkYtxNxg" />
+  <component name="ProjectId" id="1p1mDAOBX82zKUdmcEvi6yzCo0Q" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
-    <property name="vue.rearranger.settings.migration" value="true" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Bureau\travail\0_PROJETS\ApplicationWeb-Videosurveillance\src\static\client\vid" />
-      <recent name="D:\Bureau\travail\0_PROJETS\ApplicationWeb-Videosurveillance\src\static\client\img" />
+      <recent name="C:\Users\nicoc\PycharmProjects\ApplicationWeb-Videosurveillance\src\templates" />
+      <recent name="C:\Users\nicoc\PycharmProjects\ApplicationWeb-Videosurveillance\src\static" />
+      <recent name="C:\Users\nicoc\PycharmProjects\ApplicationWeb-Videosurveillance\src" />
     </key>
   </component>
   <component name="RunManager">
@@ -87,54 +72,37 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="2b9d298b-09b4-40d0-a0a0-28b8089d0a05" name="Default Changelist" comment="" />
-      <created>1614275946567</created>
+      <changelist id="8e74b2db-5d90-4e1b-9881-eef9fa54c4ff" name="Default Changelist" comment="" />
+      <created>1614358851695</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1614275946567</updated>
-      <workItem from="1614275948733" duration="376000" />
-      <workItem from="1614332507357" duration="67000" />
-      <workItem from="1614333317331" duration="14000" />
-      <workItem from="1614355863105" duration="2777000" />
-      <workItem from="1614361405813" duration="173000" />
-      <workItem from="1614582545788" duration="8901000" />
+      <updated>1614358851695</updated>
+      <workItem from="1614358853944" duration="1063000" />
+      <workItem from="1614583731885" duration="2410000" />
+      <workItem from="1614587590741" duration="6606000" />
     </task>
-    <task id="LOCAL-00001" summary="rebase the project">
-      <created>1614276032427</created>
+    <task id="LOCAL-00001" summary="v1">
+      <created>1614592487348</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1614276032427</updated>
+      <updated>1614592487348</updated>
     </task>
-    <task id="LOCAL-00002" summary="forgot the main file">
-      <created>1614276153683</created>
+    <task id="LOCAL-00002" summary="v1">
+      <created>1614592527811</created>
       <option name="number" value="00002" />
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
-      <updated>1614276153683</updated>
+      <updated>1614592527811</updated>
     </task>
-    <task id="LOCAL-00003" summary="forgot the main file">
-      <created>1614276242254</created>
+    <task id="LOCAL-00003" summary="v1">
+      <created>1614592617393</created>
       <option name="number" value="00003" />
       <option name="presentableId" value="LOCAL-00003" />
       <option name="project" value="LOCAL" />
-      <updated>1614276242254</updated>
+      <updated>1614592617393</updated>
     </task>
-    <task id="LOCAL-00004" summary="forgot the main file">
-      <created>1614361413789</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1614361413789</updated>
-    </task>
-    <task id="LOCAL-00005" summary="ze style">
-      <created>1614588140330</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1614588140330</updated>
-    </task>
-    <option name="localTasksCounter" value="6" />
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -153,12 +121,11 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="rebase the project" />
-    <MESSAGE value="forgot the main file" />
-    <MESSAGE value="ze style" />
-    <option name="LAST_COMMIT_MESSAGE" value="ze style" />
+    <MESSAGE value="version 1" />
+    <MESSAGE value="v1" />
+    <option name="LAST_COMMIT_MESSAGE" value="v1" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/ApplicationWeb_Videosurveillance$main.coverage" NAME="main Coverage Results" MODIFIED="1614596807130" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/ApplicationWeb_Videosurveillance$main.coverage" NAME="main Coverage Results" MODIFIED="1614596718147" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
   </component>
 </project>
