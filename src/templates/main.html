@@ -23,10 +23,10 @@
             <iframe id="live" frameborder="0" src="http://192.168.68.103:8080/videofeed"></iframe>
         </div>
 
-        <div class="title">
-            <h2>Vidéo en direct</h2>
+        <div class="title" style="margin-bottom: 10%; margin-top: 0.5%">
+            <h2 style="float: left;margin-left: 5%">Vidéo en direct</h2>
             <div class="go-live" onclick="showVideo('http://192.168.68.103:8080/videofeed')">
-                <img class="img_live" width="40px" height="40px" src="{{url_for('static', filename='live.png')}}" alt="img" style="display: inline-block;">
+                <img class="img_live" width="20px" height="20px" src="{{url_for('static', filename='live.png')}}" alt="img" style="display: inline-block;">
                 <p style="display: inline-block;">Live</p>
             </div>
         </div>
@@ -50,9 +50,17 @@
             </div>
             <div class="column">
                 <div class="container param" id="param">
-                    <div class="iframe-container">
+                    <div class="iframe-container settings">
                         <h3>paramètres</h3>
-                        <iframe src="http://192.168.68.103:8080/settings_window.html"></iframe>
+                        <div>
+                            <select id="logLevel">
+                            <option value="">--Veuillez choisir une option--</option>
+                            <option value="logF">Faible</option>
+                            <option value="logM">Moyen</option>
+                            <option value="logE">Élevé</option>
+                        </select>
+                        <iframe height=95%" width="95%" src="http://192.168.68.103:8080/settings_window.html"></iframe>
+                        </div>
                     </div>
                 </div>
             </div>

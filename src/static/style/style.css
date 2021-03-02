@@ -116,13 +116,22 @@ header a{
 }
 
 .go-live {
-    width: 15%;
-    margin-left: auto;
-    margin-right: auto;
+    width: 6%;
+    float: right;
+    margin-right: 5%;
+    background: #ffffff;
+    border-radius: 25px
+}
+.go-live img {
+    margin-right: 2%;
 }
 
 .go-live:hover {
     cursor: pointer;
+}
+
+.settings {
+    background: #ffffff;
 }
 
 .historique {
