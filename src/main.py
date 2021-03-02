@@ -15,9 +15,9 @@ def createListVid():
     v2 = caseVid("http://127.0.0.1:5000/get-image/backgroundOBS.png", "http://127.0.0.1:5000/get-video/franklin.mp4",
                  "vidéo du monsieur qui dance")
     v3 = caseVid("http://127.0.0.1:5000/get-image/backgroundOBS.png", "http://127.0.0.1:5000/get-video/deamon.mp4",
-                 "vidéo")
+                 "vidéo dzadaz dada")
     v4 = caseVid("http://127.0.0.1:5000/get-image/backgroundOBS.png", "http://127.0.0.1:5000/get-video/deamon.mp4",
-                 "vidéo")
+                 "vidéo azdfvfdggegeg")
 
     list = [v1, v2, v3, v4]
 

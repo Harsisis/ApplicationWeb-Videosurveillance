@@ -150,8 +150,9 @@ header a {
     margin-bottom: 10%;
     display: inline-block;
     margin-left: 5%;
+    margin-right: auto;
     background: #151515;
-    float: left;
+    width: 100%;
 }
 
 .vignette:hover {
