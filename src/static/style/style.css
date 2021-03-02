@@ -111,6 +111,20 @@ header a{
     display: none;
 }
 
+.img_live{
+    height: 20%;
+}
+
+.go-live {
+    width: 15%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.go-live:hover {
+    cursor: pointer;
+}
+
 .historique {
             padding-top: 0%;
             border: 1cm;

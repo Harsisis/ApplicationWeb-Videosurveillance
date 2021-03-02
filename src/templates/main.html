@@ -20,20 +20,15 @@
     <div class="container">
         <div class="iframe-container">
             <iframe id="snap" width="560" height="315" frameborder="0" style="display: none"></iframe>
-            <iframe id="live" width="560" height="315" frameborder="0"
-                    src="http://192.168.68.103:8080/videofeed"></iframe>
+            <iframe id="live" frameborder="0" src="http://192.168.68.103:8080/videofeed"></iframe>
         </div>
 
         <div class="title">
-            <ul>
-                <li>
-                    <h2>Vidéo en direct</h2>
-<!--                    <img class="img_live" src="img/live.png" alt="img">-->
-                    <h3>
-                        <button onclick="showVideo('http://192.168.68.103:8080/videofeed')">Live</button>
-                    </h3>
-                </li>
-            </ul>
+            <h2>Vidéo en direct</h2>
+            <div class="go-live" onclick="showVideo('http://192.168.68.103:8080/videofeed')">
+                <img class="img_live" width="40px" height="40px" src="{{url_for('static', filename='live.png')}}" alt="img" style="display: inline-block;">
+                <p style="display: inline-block;">Live</p>
+            </div>
         </div>
     </div>
 
@@ -45,8 +40,10 @@
                 <button onclick="showActivity()">voir dernières activités</button>
                 <button onclick="showParam()">paramètres</button>
                 <div class="activity" id="activity">
-                    <button onclick="showVideo('http://127.0.0.1:5000/get-video/franklin.mp4')">voir dernière activité</button>
-                    <button onclick="showVideo('http://127.0.0.1:5000/get-video/deamon.mp4')">voir dernière activité</button>
+                    <button onclick="showVideo('http://127.0.0.1:5000/get-video/franklin.mp4')">voir dernière activité
+                    </button>
+                    <button onclick="showVideo('http://127.0.0.1:5000/get-video/deamon.mp4')">voir dernière activité
+                    </button>
                     <button>voir dernière activité</button>
                     <button>voir dernière activité</button>
                 </div>
