@@ -26,7 +26,7 @@
         <div class="title" style="margin-bottom: 10%; margin-top: 0.5%">
             <h2 style="float: left;margin-left: 5%">Vidéo en direct</h2>
             <div class="go-live" onclick="showVideo('http://192.168.68.103:8080/videofeed')">
-                <img class="img_live" width="20px" height="20px" src="{{url_for('static', filename='live.png')}}"
+                <img class="img_live" width="10px" height="10px" src="{{url_for('static', filename='live.png')}}"
                      alt="img" style="display: inline-block;">
                 <p style="display: inline-block;">Live</p>
             </div>
@@ -39,7 +39,10 @@
                 <div class="titleBox"><h3>Vos actions</h3></div>
                 <button onclick="takePic()">Prendre une photo</button>
                 <button onclick="showActivity()">voir dernières activités</button>
-                <button style="background: #444444; color: #cccccc" onclick="showParam()"><img height="15px" width="15px" src="{{url_for('static', filename='baseline_settings_white_24dp.png')}}">paramètres</button>
+                <button style="background: #444444; color: #cccccc" onclick="showParam()"><img height="15px"
+                                                                                               width="15px"
+                                                                                               src="{{url_for('static', filename='baseline_settings_white_24dp.png')}}">paramètres
+                </button>
                 <div class="activity" id="activity">
                     <button onclick="showVideo('http://127.0.0.1:5000/get-video/franklin.mp4')">voir dernière activité
                     </button>
@@ -70,7 +73,8 @@
                                     <input id="purge" type="number" name="purge" placeholder="ex: 12">
                                 </article>
 
-                                <iframe class="iframeSettings" height="660px" src="http://192.168.68.103:8080/settings_window.html"></iframe>
+                                <iframe class="iframeSettings" height="660px"
+                                        src="http://192.168.68.103:8080/settings_window.html"></iframe>
 
                                 <article>
                                     <input type="submit" value="Valider" name="valider">
@@ -87,11 +91,22 @@
 
 <div class="superCol right">
     <div class="historique">
-            <h2 class="date">Aujourd'hui</h2>
-            <h2 class="date">Hier</h2>
+        <h2 class="date">Aujourd'hui</h2>
+        <h2 class="date">Hier</h2>
+
+        {% for video in videos %}
+            <div class="vignette row"  onclick="showVideo('{{ video.linkVid }}')">
+                <div class="column">
+                    <img src="{{ video.linkPic }}" width="100px">
+                </div>
+                <div class="column">
+                    <h4>{{ video.title }}</h4>
+                </div>
+            </div><br><br><br><br><br><br><br>
+        {% endfor %}
+
     </div>
 </div>
-
 
 </body>
 </html>

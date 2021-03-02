@@ -11,9 +11,9 @@ class caseVid:
 
 def createListVid():
     v1 = caseVid("http://127.0.0.1:5000/get-image/backgroundOBS.png", "http://127.0.0.1:5000/get-video/deamon.mp4",
-                 "vidéo")
-    v2 = caseVid("http://127.0.0.1:5000/get-image/backgroundOBS.png", "http://127.0.0.1:5000/get-video/deamon.mp4",
-                 "vidéo")
+                 "vidéo du gamin")
+    v2 = caseVid("http://127.0.0.1:5000/get-image/backgroundOBS.png", "http://127.0.0.1:5000/get-video/franklin.mp4",
+                 "vidéo du monsieur qui dance")
     v3 = caseVid("http://127.0.0.1:5000/get-image/backgroundOBS.png", "http://127.0.0.1:5000/get-video/deamon.mp4",
                  "vidéo")
     v4 = caseVid("http://127.0.0.1:5000/get-image/backgroundOBS.png", "http://127.0.0.1:5000/get-video/deamon.mp4",
@@ -27,8 +27,9 @@ def createListVid():
 # Flask
 app = Flask(__name__)
 
+# app.config Gauthier
 app.config["CLIENT_IMAGES"] = "D:/Bureau/travail/0_PROJETS/ApplicationWeb-Videosurveillance/src/static/client/img"
-app.config["CLIENT_VIDEOS"] = "C:/Users/nicoc/PycharmProjects/ApplicationWeb-Videosurveillance/src/static/client/vid"
+app.config["CLIENT_VIDEOS"] = "D:/Bureau/travail/0_PROJETS/ApplicationWeb-Videosurveillance/src/static/client/vid"
 
 
 @app.route("/get-image/<image_name>")
@@ -49,7 +50,7 @@ def get_video(video_name):
 
 @app.route("/")
 def home():
-    return render_template("main.html")
+    return render_template("main.html", videos=createListVid())
 
 
 if __name__ == "__main__":
