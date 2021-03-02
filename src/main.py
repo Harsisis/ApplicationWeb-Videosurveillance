@@ -28,7 +28,7 @@ def createListVid():
 app = Flask(__name__)
 
 app.config["CLIENT_IMAGES"] = "D:/Bureau/travail/0_PROJETS/ApplicationWeb-Videosurveillance/src/static/client/img"
-app.config["CLIENT_VIDEOS"] = "D:/Bureau/travail/0_PROJETS/ApplicationWeb-Videosurveillance/src/static/client/vid"
+app.config["CLIENT_VIDEOS"] = "C:/Users/nicoc/PycharmProjects/ApplicationWeb-Videosurveillance/src/static/client/vid"
 
 
 @app.route("/get-image/<image_name>")

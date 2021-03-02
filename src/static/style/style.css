@@ -18,11 +18,11 @@ a{
 
 header{
     width: 100%;
-    background-color: #242424;
+    background: #242424;
     color: #F5F5F5;
     padding-top: 2%;
     padding-bottom: 2%;
-    height: 6vh;
+    height: 5vh;
     margin-bottom: 3em;
 }
 header ul {
@@ -32,8 +32,8 @@ header ul {
 }
 
 header h3 {
-    margin-left: 5%;
     font-size: xx-large;
+    text-align: center;
 }
 
 header li {
@@ -51,18 +51,20 @@ header a{
     float: left;
 }
 .right {
-    width: 15%;
+    width: 25%;
 }
 .left {
-    width: 85%;
+    width: 75%;
 }
 
 .iframe-container {
     overflow: hidden;
     position: relative;
     height: 800px;
+    width: 1300px;
     margin-left: auto;
     margin-right: auto;
+    margin-top: auto;
 }
 
 .iframe-container iframe {
@@ -71,7 +73,6 @@ header a{
     width: 95%;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 5%;
 }
 
 .iframeSettings {
@@ -95,7 +96,7 @@ header a{
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    background: #262626;
+    background: -webkit-linear-gradient(to left, #242424, #222222);
     text-align: center;
 }
 
@@ -130,7 +131,7 @@ header a{
     float: right;
     margin-right: 5%;
     background: #ffffff;
-    border-radius: 25px
+    border-radius: 25px;
 }
 .go-live img {
     margin-right: 2%;
@@ -165,5 +166,5 @@ article {
         }
 
         .container {
-            margin-right: 30%;
+            margin-right: 40%;
         }
