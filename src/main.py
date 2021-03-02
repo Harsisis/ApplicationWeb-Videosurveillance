@@ -1,5 +1,30 @@
 from flask import Flask, render_template, abort, send_from_directory
 
+
+# constructeur classe vidéos
+class caseVid:
+    def __init__(self, linkPic, linkVid, title):
+        self.linkPic = linkPic
+        self.linkVid = linkVid
+        self.title = title
+
+
+def createListVid():
+    v1 = caseVid("http://127.0.0.1:5000/get-image/backgroundOBS.png", "http://127.0.0.1:5000/get-video/deamon.mp4",
+                 "vidéo")
+    v2 = caseVid("http://127.0.0.1:5000/get-image/backgroundOBS.png", "http://127.0.0.1:5000/get-video/deamon.mp4",
+                 "vidéo")
+    v3 = caseVid("http://127.0.0.1:5000/get-image/backgroundOBS.png", "http://127.0.0.1:5000/get-video/deamon.mp4",
+                 "vidéo")
+    v4 = caseVid("http://127.0.0.1:5000/get-image/backgroundOBS.png", "http://127.0.0.1:5000/get-video/deamon.mp4",
+                 "vidéo")
+
+    list = [v1, v2, v3, v4]
+
+    return list
+
+
+# Flask
 app = Flask(__name__)
 
 app.config["CLIENT_IMAGES"] = "D:/Bureau/travail/0_PROJETS/ApplicationWeb-Videosurveillance/src/static/client/img"
