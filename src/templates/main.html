@@ -26,7 +26,8 @@
         <div class="title" style="margin-bottom: 10%; margin-top: 0.5%">
             <h2 style="float: left;margin-left: 5%">Vidéo en direct</h2>
             <div class="go-live" onclick="showVideo('http://192.168.68.103:8080/videofeed')">
-                <img class="img_live" width="20px" height="20px" src="{{url_for('static', filename='live.png')}}" alt="img" style="display: inline-block;">
+                <img class="img_live" width="20px" height="20px" src="{{url_for('static', filename='live.png')}}"
+                     alt="img" style="display: inline-block;">
                 <p style="display: inline-block;">Live</p>
             </div>
         </div>
@@ -50,17 +51,32 @@
             </div>
             <div class="column">
                 <div class="container param" id="param">
-                    <div class="iframe-container settings">
+                    <div class="settings">
                         <h3>paramètres</h3>
-                        <div>
-                            <label for="logLevel">Log level</label>
-                            <select id="logLevel">
-                            <option value="">--Veuillez choisir une option--</option>
-                            <option value="logF">Faible</option>
-                            <option value="logM">Moyen</option>
-                            <option value="logE">Élevé</option>
-                        </select>
-                        <iframe height=95%" width="95%" src="http://192.168.68.103:8080/settings_window.html"></iframe>
+                        <div style="height: 100%">
+                            <form id="formSettings">
+                                <article>
+                                    <label for="logLevel">Log level</label>
+                                    <select id="logLevel">
+                                        <option value="">--Veuillez choisir une option--</option>
+                                        <option value="logF">Faible</option>
+                                        <option value="logM">Moyen</option>
+                                        <option value="logE">Élevé</option>
+                                    </select>
+                                </article>
+
+                                <article>
+                                    <label for="purge">Nombre de jours avant la purge</label>
+                                    <input id="purge" type="number" name="purge" placeholder="ex: 12">
+                                </article>
+
+                                <iframe class="iframeSettings" height="660px" src="http://192.168.68.103:8080/settings_window.html"></iframe>
+
+                                <article>
+                                    <input type="submit" value="Valider" name="valider">
+                                </article>
+                            </form>
+
                         </div>
                     </div>
                 </div>
