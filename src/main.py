@@ -1,4 +1,4 @@
-from flask import Flask, render_template, abort, send_from_directory, request, config
+from flask import Flask, render_template, redirect, abort, send_from_directory, request, config
 from os import listdir
 from os.path import isfile, join
 from yaml import load, dump
@@ -52,7 +52,7 @@ app.config["CLIENT_Files"] = "D:/Bureau/travail/0_PROJETS/ApplicationWeb-Videosu
 # app.config Nicolas
 # app.config["CLIENT_Files"] = "C:/Users/nicoc/PycharmProjects/ApplicationWeb-Videosurveillance/src/static/client/files"
 
-# app.confif Antoine 
+# app.config Antoine
 # app.config["CLIENT_Files"] = "C:/Users/Tonio/Desktop/Projetlol/ApplicationWeb-Videosurveillance/src/static/client/files"
 
 
@@ -75,8 +75,20 @@ def get_video(video_name):
 @app.route("/update_config/", methods=['POST'])
 def update_config():
     request.form.get('config', '')
+    with open('D:/Bureau/travail/0_PROJETS/ApplicationWeb-Videosurveillance/src/config.yaml') as file:
+        config_yaml = yaml.full_load(file)
+    config_yaml['ip_address'] = request.form.get("ip", "")
+    config_yaml['log_level'] = request.form.get("logLevel", "Faible")
+    config_yaml['purge'] = request.form.get("purge", 25)
+    config_yaml['detection'] = True if request.form.get('detection', False) else False
+    config_yaml['jeealert'] = True if request.form.get('jalerte', False) else False
+    config_yaml['recording'] = True if request.form.get('recording', False) else False
+    config_yaml['streaming'] = True if request.form.get('stream', False) else False
+
     with open('D:/Bureau/travail/0_PROJETS/ApplicationWeb-Videosurveillance/src/config.yaml', 'w') as wfile:
-        config_yaml = yaml.dump(config, wfile)
+        yaml.dump(config_yaml, wfile)
+
+    return redirect("/")
 
 
 @app.route("/")

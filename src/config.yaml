@@ -1,11 +1,7 @@
-
-ip_address: '192.168.68.103:8080'
-
-log_level: 'Faible'
-
-purge: 31
-
 detection: true
+ip_address: 192.168.68.103:8080
 jeealert: true
+log_level: Faible
+purge: '31'
 recording: false
 streaming: false

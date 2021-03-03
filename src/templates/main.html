@@ -26,7 +26,7 @@
 
         <div class="title" style="margin-bottom: 10%; margin-top: 0.5%">
             <h2 style="float: left;margin-left: 5%">Vidéo en direct</h2>
-            <div class="go-live" onclick="showVideo(getLiveIP())">
+            <div class="go-live" onclick="showLive('{{ ip_camera }}')">
                 <img class="img_live" width="10px" height="10px" src="{{url_for('static', filename='live.png')}}"
                      alt="img" style="display: inline-block;">
                 <p style="display: inline-block;">Live</p>
@@ -38,7 +38,7 @@
         <div class="row">
             <div class="column">
                 <div class="titleBox"><h3>Vos actions</h3></div>
-                <button onclick="takePic()">Prendre une photo</button>
+                <button onclick="takePic('{{ ip_camera }}')">Prendre une photo</button>
                 <button style="background: #444444; color: #cccccc" onclick="showParam()"><img height="15px"
                                                                                                width="15px"
                                                                                                src="{{url_for('static', filename='baseline_settings_white_24dp.png')}}">paramètres
@@ -49,15 +49,15 @@
                     <div class="settings">
                         <h3>paramètres</h3>
                         <div style="height: 100%">
-                            <form id="formSettings" name="config" method="post">
+                            <form id="formSettings" name="config" method="post" action="/update_config/">
                                 <article>
                                     <label for="ip">Adresse IP de la caméra</label>
-                                    <input type="text" id="ip" placeholder="adresse IP">
+                                    <input type="text" name="ip" id="ip" placeholder="adresse IP">
                                 </article>
 
                                 <article>
                                     <label for="logLevel">Log level</label>
-                                    <select id="logLevel">
+                                    <select id="logLevel" name="logLevel">
                                         <option value="">--Veuillez choisir une option--</option>
                                         <option value="Faible">Faible</option>
                                         <option value="Moyen">Moyen</option>
@@ -107,7 +107,7 @@
                                         src="http://192.168.68.103:8080/settings_window.html"></iframe>
 
                                 <article>
-                                    <button id="valider" onclick="editYaml()">Valider</button>
+                                    <input type="submit" name="valider" value="Valider" id="valider"/>
                                 </article>
                             </form>
 

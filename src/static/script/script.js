@@ -1,35 +1,40 @@
 function onShow (ip, log_level, detection, jeealert, recording, streaming) {
-    //get ip from yaml
-    if (ip === null){
-        IP = 'http://192.168.68.103:8080/videofeed';
-    } else {
-        IP = 'http://' + ip + '/videofeed';
-    }
-    document.getElementById("live").src = IP;
-    document.getElementById("ip").value = IP;
+
+    document.getElementById("live").src = 'http://' + ip + '/videofeed';
+    document.getElementById("ip").value = ip;
 
     document.getElementById("logLevel").value = log_level;
 
-    document.getElementById("detectionCB").checked = detection;
-    document.getElementById("jalerteCB").checked = jeealert;
-    document.getElementById("recordingCB").checked = recording;
-    document.getElementById("streamCB").checked = streaming;
+    if (detection === "True" || detection === "true") {
+        document.getElementById("detectionCB").checked = true
+    } else{
+        document.getElementById("detectionCB").checked = false
+    }
+    if (jeealert === "True" || jeealert === "true") {
+        document.getElementById("jalerteCB").checked = true
+    } else{
+        document.getElementById("jalerteCB").checked = false
+    }
+    if (recording === "True" || recording === "true") {
+        document.getElementById("recordingCB").checked = true
+    } else{
+        document.getElementById("recordingCB").checked = false
+    }
+    if (streaming === "True" || streaming === "true") {
+        document.getElementById("streamCB").checked = true
+    } else{
+        document.getElementById("streamCB").checked = false
+    }
+    console.log(detection);
+    console.log(jeealert);
+    console.log(recording);
+    console.log(streaming);
 }
 
-function editYaml() {
-    //edit yaml
-    IP = document.getElementById("ip").value;
-    console.log(IP);
-}
-
-function getLiveIP () {
-    return 'http://' + IP + ':8080/videofeed';
-}
-
-function takePic () {
+function takePic (ipadr) {
     var choice = window.confirm("Voulez vous voir la photo ?");
     if (choice) {
-        window.open('http://' + IP + ':8080/photo.jpg');
+        window.open(  'http://' + ipadr + 'photo.jpg');
     }
 }
 
@@ -50,6 +55,16 @@ function showVideo (url) {
         snap.style.display = "block";
     }
     snap.src = url;
+}
+
+function showLive (ip) {
+    let live = document.getElementById("live");
+    let snap = document.getElementById("snap");
+    if (snap.style.display === "none") {
+        live.style.display = "none";
+        snap.style.display = "block";
+    }
+    snap.src = 'http://' + ip + '/videofeed';
 }
 
 function onStartedDownload(id) {
