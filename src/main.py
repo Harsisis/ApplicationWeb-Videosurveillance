@@ -25,7 +25,7 @@ def createListVid():
 
     liste_files = [v1, v2, v3, v4]
 
-    all_files = listdir("D:/Bureau/travail/0_PROJETS/ApplicationWeb-Videosurveillance/src/static/client/files")
+    all_files = listdir(app.config["CLIENT_Files"])
 
     for vid in all_files:
         if vid.endswith(".mp4"):

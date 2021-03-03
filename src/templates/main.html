@@ -51,6 +51,11 @@
                         <div style="height: 100%">
                             <form id="formSettings">
                                 <article>
+                                    <label for="ip">Adresse IP de la caméra</label>
+                                    <input type="text" id="ip" placeholder="adresse IP">
+                                </article>
+
+                                <article>
                                     <label for="logLevel">Log level</label>
                                     <select id="logLevel">
                                         <option value="">--Veuillez choisir une option--</option>
@@ -69,7 +74,7 @@
                                         src="http://192.168.68.103:8080/settings_window.html"></iframe>
 
                                 <article>
-                                    <input type="submit" value="Valider" name="valider">
+                                    <button id="valider" onclick="editYaml()">Valider</button>
                                 </article>
                             </form>
 

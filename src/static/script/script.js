@@ -1,6 +1,13 @@
 function promptIP () {
-    IP = prompt("Veuillez saisir l'adresse IP de la caméra", "192.168.68.103");
-    document.getElementById("live").src = 'http://' + IP + ':8080/videofeed';
+    //get ip from yaml
+    IP = 'http://192.168.68.103:8080/videofeed';
+    document.getElementById("live").src = IP;
+    document.getElementById("ip").value = IP;
+}
+
+function editYaml() {
+    IP = document.getElementById("ip").value;
+    console.log(IP);
 }
 
 function getLiveIP () {
