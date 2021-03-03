@@ -31,19 +31,23 @@
                      alt="img" style="display: inline-block;">
                 <p style="display: inline-block;">Live</p>
             </div>
+            <div>
+                <button class="button" style="background: #242424; color: #cccccc" onclick="showParam()">
+                    <img height="30px"
+                         width="30px"
+                         src="{{url_for('static', filename='baseline_settings_white_24dp.png')}}">
+                </button>
+                <button class="button" style="background: #242424; color: #cccccc" onclick="takePic('{{ ip_camera }}')">
+                    <img height="30px"
+                         width="30px"
+                         src="{{url_for('static', filename='camera.png')}}">
+                </button>
+            </div>
         </div>
     </div>
 
-    <div class="container">
+    <div class="container2">
         <div class="row">
-            <div class="column">
-                <div class="titleBox"><h3>Vos actions</h3></div>
-                <button onclick="takePic('{{ ip_camera }}')">Prendre une photo</button>
-                <button style="background: #444444; color: #cccccc" onclick="showParam()"><img height="15px"
-                                                                                               width="15px"
-                                                                                               src="{{url_for('static', filename='baseline_settings_white_24dp.png')}}">paramètres
-                </button>
-            </div>
             <div class="column">
                 <div class="container param" id="param">
                     <div class="settings">

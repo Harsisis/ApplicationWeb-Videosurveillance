@@ -49,6 +49,25 @@ header a {
     padding-bottom: 2%;
 }
 
+.title h2 {
+    color: white;
+    margin-left: auto;
+}
+
+.titleBox {
+    color: white;
+}
+
+.button {
+    border: #242424;
+    float: right;
+    margin-right: 2%;
+    margin-top: 10px;
+}
+.button:hover{
+    cursor: pointer;
+}
+
 .superCol {
     float: left;
 }
@@ -87,7 +106,7 @@ header a {
 
 .column {
     float: left;
-    width: 50%;
+    padding-left: 10px;
 }
 
 .row:after {
@@ -109,12 +128,21 @@ header a {
     padding-bottom: 2%;
 }
 
+.container2 {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    background: -webkit-linear-gradient(to left, #242424, #222222);
+    text-align: center;
+}
+
 .param {
     display: none;
 }
 
 .settings {
-    height: 850px;
+    height: 943px;
+    width: 200%;
 }
 
 .img_live {
@@ -138,12 +166,13 @@ header a {
 }
 
 .vignette {
-    margin-bottom: 10%;
+    margin-bottom: 15px;
     display: inline-block;
     margin-left: 5%;
     margin-right: auto;
-    background: #151515;
+    background: #222222;
     width: 100%;
+
 }
 
 .vignette:hover {
@@ -177,61 +206,61 @@ article {
 }
 
 .switch {
-  position: relative;
-  display: inline-block;
-  width: 40px;
-  height: 16px;
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 16px;
 }
 
 .switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
+    opacity: 0;
+    width: 0;
+    height: 0;
 }
 
 .slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  -webkit-transition: .4s;
-  transition: .4s;
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
 }
 
 .slider:before {
-  position: absolute;
-  content: "";
-  height: 14px;
-  width: 14px;
-  left: 1px;
-  bottom: 1px;
-  background-color: white;
-  -webkit-transition: .2s;
-  transition: .2s;
+    position: absolute;
+    content: "";
+    height: 14px;
+    width: 14px;
+    left: 1px;
+    bottom: 1px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
 }
 
 input:checked + .slider {
-  background-color: #2196F3;
+    background-color: #2196F3;
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
+    box-shadow: 0 0 1px #2196F3;
 }
 
 input:checked + .slider:before {
-  -webkit-transform: translateX(24px);
-  -ms-transform: translateX(24px);
-  transform: translateX(24px);
+    -webkit-transform: translateX(24px);
+    -ms-transform: translateX(24px);
+    transform: translateX(24px);
 }
 
 /* Rounded sliders */
 .slider.round {
-  border-radius: 17px;
+    border-radius: 17px;
 }
 
 .slider.round:before {
-  border-radius: 50%;
+    border-radius: 50%;
 }

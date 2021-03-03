@@ -34,7 +34,7 @@ function onShow (ip, log_level, detection, jeealert, recording, streaming) {
 function takePic (ipadr) {
     var choice = window.confirm("Voulez vous voir la photo ?");
     if (choice) {
-        window.open(  'http://' + ipadr + 'photo.jpg');
+        window.open('http://' + ipadr + '/photo.jpg');
     }
 }
 
