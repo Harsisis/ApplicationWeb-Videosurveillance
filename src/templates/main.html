@@ -8,7 +8,7 @@
     <link rel="icon" href="{{ url_for('static', filename='Pioche_en_Netherite.ico') }}" />
     <script src="{{ url_for('static',filename='script/script.js') }}"></script>
 </head>
-<body>
+<body onpageshow="promptIP()">
 <header>
     <div>
         <ul>
@@ -21,12 +21,12 @@
     <div class="container">
         <div class="iframe-container">
             <iframe id="snap" width="560" height="315" frameborder="0" style="display: none"></iframe>
-            <iframe id="live" frameborder="0" src="http://192.168.68.103:8080/videofeed"></iframe>
+            <iframe id="live" frameborder="0"></iframe>
         </div>
 
         <div class="title" style="margin-bottom: 10%; margin-top: 0.5%">
             <h2 style="float: left;margin-left: 5%">Vidéo en direct</h2>
-            <div class="go-live" onclick="showVideo('http://192.168.68.103:8080/videofeed')">
+            <div class="go-live" onclick="showVideo(getLiveIP())">
                 <img class="img_live" width="10px" height="10px" src="{{url_for('static', filename='live.png')}}"
                      alt="img" style="display: inline-block;">
                 <p style="display: inline-block;">Live</p>
@@ -39,19 +39,10 @@
             <div class="column">
                 <div class="titleBox"><h3>Vos actions</h3></div>
                 <button onclick="takePic()">Prendre une photo</button>
-                <button onclick="showActivity()">voir dernières activités</button>
                 <button style="background: #444444; color: #cccccc" onclick="showParam()"><img height="15px"
                                                                                                width="15px"
                                                                                                src="{{url_for('static', filename='baseline_settings_white_24dp.png')}}">paramètres
                 </button>
-                <div class="activity" id="activity">
-                    <button onclick="showVideo('http://127.0.0.1:5000/get-video/franklin.mp4')">voir dernière activité
-                    </button>
-                    <button onclick="showVideo('http://127.0.0.1:5000/get-video/deamon.mp4')">voir dernière activité
-                    </button>
-                    <button>voir dernière activité</button>
-                    <button>voir dernière activité</button>
-                </div>
             </div>
             <div class="column">
                 <div class="container param" id="param">
@@ -104,7 +95,6 @@
                     <h4>{{ video.title }}</h4>
                 </div>
             </div>
-<!--        <br><br><br><br><br><br><br>-->
         {% endfor %}
 
     </div>
