@@ -70,7 +70,7 @@ def get_video(video_name):
 @app.route("/update_config/", methods=['POST'])
 def update_config():
     request.form.get('config', '')
-    with open('D:\Bureau\travail\0_PROJETS\ApplicationWeb-Videosurveillance\src\config.yaml', 'w') as wfile:
+    with open('D:/Bureau/travail/0_PROJETS/ApplicationWeb-Videosurveillance/src/config.yaml', 'w') as wfile:
         config_yaml = yaml.dump(config, wfile)
 
 
