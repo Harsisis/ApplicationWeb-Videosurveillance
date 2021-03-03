@@ -1,4 +1,13 @@
-h1, h2, h3, h4, h5, h6, p, button, option, label {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+button,
+option,
+label {
     font-family: Monospace, sans-serif;
 }
 
@@ -64,7 +73,8 @@ header a {
     margin-right: 2%;
     margin-top: 10px;
 }
-.button:hover{
+
+.button:hover {
     cursor: pointer;
 }
 
@@ -172,7 +182,6 @@ header a {
     margin-right: auto;
     background: #222222;
     width: 100%;
-
 }
 
 .vignette:hover {
@@ -242,21 +251,23 @@ article {
     transition: .4s;
 }
 
-input:checked + .slider {
-    background-color: #2196F3;
+input:checked+.slider {
+    background-color: #11557C;
 }
 
-input:focus + .slider {
-    box-shadow: 0 0 1px #2196F3;
+input:focus+.slider {
+    box-shadow: 0 0 1px #11557C;
 }
 
-input:checked + .slider:before {
+input:checked+.slider:before {
     -webkit-transform: translateX(24px);
     -ms-transform: translateX(24px);
     transform: translateX(24px);
 }
 
+
 /* Rounded sliders */
+
 .slider.round {
     border-radius: 17px;
 }
