@@ -52,6 +52,9 @@ app.config["CLIENT_Files"] = "D:/Bureau/travail/0_PROJETS/ApplicationWeb-Videosu
 # app.config Nicolas
 # app.config["CLIENT_Files"] = "C:/Users/nicoc/PycharmProjects/ApplicationWeb-Videosurveillance/src/static/client/files"
 
+# app.confif Antoine 
+# app.config["CLIENT_Files"] = "C:/Users/Tonio/Desktop/Projetlol/ApplicationWeb-Videosurveillance/src/static/client/files"
+
 
 @app.route("/get-image/<image_name>")
 def get_image(image_name):
@@ -78,7 +81,7 @@ def update_config():
 
 @app.route("/")
 def home():
-    with open('D:/Bureau/travail/0_PROJETS\ApplicationWeb-Videosurveillance/src/config.yaml') as file:
+    with open('D:/Bureau/travail/0_PROJETS/ApplicationWeb-Videosurveillance/src/config.yaml') as file:
         config_yaml = yaml.full_load(file)
     return render_template("main.html",
                            videos=createListVid(),
