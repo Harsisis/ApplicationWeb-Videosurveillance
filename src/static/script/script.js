@@ -1,11 +1,23 @@
-function promptIP () {
+function onShow (ip, log_level, detection, jeealert, recording, streaming) {
     //get ip from yaml
-    IP = 'http://192.168.68.103:8080/videofeed';
+    if (ip === null){
+        IP = 'http://192.168.68.103:8080/videofeed';
+    } else {
+        IP = 'http://' + ip + '/videofeed';
+    }
     document.getElementById("live").src = IP;
     document.getElementById("ip").value = IP;
+
+    document.getElementById("logLevel").value = log_level;
+
+    document.getElementById("detectionCB").checked = detection;
+    document.getElementById("jalerteCB").checked = jeealert;
+    document.getElementById("recordingCB").checked = recording;
+    document.getElementById("streamCB").checked = streaming;
 }
 
 function editYaml() {
+    //edit yaml
     IP = document.getElementById("ip").value;
     console.log(IP);
 }
