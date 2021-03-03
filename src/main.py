@@ -1,6 +1,6 @@
 from flask import Flask, render_template, abort, send_from_directory
-import glob
-import os.path
+from os import listdir
+from os.path import isfile, join
 
 
 # constructeur classe vidéos
@@ -12,13 +12,7 @@ class caseVid:
 
 
 def createListVid():
-    # app.config["CLIENT_Files"]
-    # vid_files = glob.glob(os.path.join(dir, '*.avi'))
-    # img_files = glob.glob(os.path.join(dir, '*.png'))
-
-    # for vid in vid_files:
-    #     while vid
-    #
+    global liste_files
 
     v1 = caseVid("http://127.0.0.1:5000/get-image/backgroundOBS.png", "http://127.0.0.1:5000/get-video/deamon.mp4",
                  "vidéo du gamin")
@@ -29,9 +23,20 @@ def createListVid():
     v4 = caseVid("http://127.0.0.1:5000/get-image/backgroundOBS.png", "http://127.0.0.1:5000/get-video/deamon.mp4",
                  "vidéo azdfvfdggegeg")
 
-    list = [v1, v2, v3, v4]
+    liste_files = [v1, v2, v3, v4]
 
-    return list
+    all_files = listdir("D:/Bureau/travail/0_PROJETS/ApplicationWeb-Videosurveillance/src/static/client/files")
+
+    for vid in all_files:
+        if vid.endswith(".mp4"):
+            nom_vid = vid
+            for img in all_files:
+                if nom_vid[:len(nom_vid) - 3]+"png" == img:
+                    nom_img = img
+                    liste_files.append(caseVid("http://127.0.0.1:5000/get-image/" + nom_img,
+                                               "http://127.0.0.1:5000/get-video/" + nom_vid, nom_vid[:len(nom_vid) - 4]))
+
+    return liste_files
 
 
 # Flask
