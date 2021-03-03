@@ -33,7 +33,7 @@ def createListVid():
         if vid.endswith(".mp4"):
             nom_vid = vid
             for img in all_files:
-                if nom_vid[:len(nom_vid) - 3] + "png" == img:
+                if nom_vid[:len(nom_vid) - 3] + "jpg" == img:
                     nom_img = img
                     liste_files.append(caseVid("http://127.0.0.1:5000/get-image/" + nom_img,
                                                "http://127.0.0.1:5000/get-video/" + nom_vid,
