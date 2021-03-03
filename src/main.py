@@ -46,10 +46,15 @@ def createListVid():
 app = Flask(__name__)
 
 # app.config Gauthier
-#app.config["CLIENT_Files"] = "D:/Bureau/travail/0_PROJETS/ApplicationWeb-Videosurveillance/src/static/client/files"
+app.config["CLIENT_Files"] = "D:/Bureau/travail/0_PROJETS/ApplicationWeb-Videosurveillance/src/static/client/files"
+
 
 # app.config Nicolas
-app.config["CLIENT_Files"] = "C:/Users/nicoc/PycharmProjects/ApplicationWeb-Videosurveillance/src/static/client/files"
+# app.config["CLIENT_Files"] = "C:/Users/nicoc/PycharmProjects/ApplicationWeb-Videosurveillance/src/static/client/files"
+
+# app.confif Antoine 
+# app.config["CLIENT_Files"] = "C:/Users/Tonio/Desktop/Projetlol/ApplicationWeb-Videosurveillance/src/static/client/files"
+
 
 @app.route("/get-image/<image_name>")
 def get_image(image_name):
@@ -76,17 +81,17 @@ def update_config():
 
 @app.route("/")
 def home():
-    with open(r'D:\Bureau\travail\0_PROJETS\ApplicationWeb-Videosurveillance\src\config.yaml') as file:
+    with open('D:/Bureau/travail/0_PROJETS/ApplicationWeb-Videosurveillance/src/config.yaml') as file:
         config_yaml = yaml.full_load(file)
     return render_template("main.html",
                            videos=createListVid(),
-                           ip_camera=config['ip_address'],
-                           purge=config['purge'],
-                           detection=config['detection'],
-                           jeealert=config['jeealert'],
-                           log_level=config['log_level'],
-                           recording=config['recording'],
-                           streaming=config['streaming'])
+                           ip_camera=config_yaml['ip_address'],
+                           purge=config_yaml['purge'],
+                           detection=config_yaml['detection'],
+                           jeealert=config_yaml['jeealert'],
+                           log_level=config_yaml['log_level'],
+                           recording=config_yaml['recording'],
+                           streaming=config_yaml['streaming'])
 
 
 if __name__ == "__main__":
