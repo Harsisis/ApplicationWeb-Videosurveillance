@@ -2,6 +2,7 @@ function onShow (ip, log_level, detection, jeealert, recording, streaming) {
 
     document.getElementById("live").src = 'http://' + ip + '/videofeed';
     document.getElementById("ip").value = ip;
+    document.getElementById("settings").src = 'http://' + ip + '/settings_window.html';
 
     document.getElementById("logLevel").value = log_level;
 
