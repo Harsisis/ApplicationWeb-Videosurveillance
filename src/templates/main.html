@@ -8,7 +8,7 @@
     <link rel="icon" href="{{ url_for('static', filename='Pioche_en_Netherite.ico') }}"/>
     <script src="{{ url_for('static',filename='script/script.js') }}"></script>
 </head>
-<body onpageshow="onShow('{{ ip_camera }}', '{{ log_level }}', '{{ detection }}', '{{ jeealert }}', '{{ recording }}', '{{ streaming }}')">
+<body class="main" onpageshow="onShow('{{ ip_camera }}', '{{ log_level }}', '{{ detection }}', '{{ jeealert }}', '{{ recording }}', '{{ streaming }}')">
 <header>
     <div>
         <ul>
@@ -25,14 +25,14 @@
         </div>
 
         <div class="title" style="margin-bottom: 10%; margin-top: 0.5%">
-            <h2 style="float: left;margin-left: 5%">Vidéo en direct</h2>
+            <h2 style="float: left;margin-left: 10%">Vidéo en direct</h2>
             <div class="go-live" onclick="showLive('{{ ip_camera }}')">
                 <img class="img_live" width="10px" height="10px" src="{{url_for('static', filename='live.png')}}"
                      alt="img" style="display: inline-block;">
                 <p style="display: inline-block;">Live</p>
             </div>
             <div>
-                <button class="button" style="background: #242424; color: #cccccc" onclick="showParam()">
+                <button class="button" style="background: #242424; color: #cccccc" onclick="popup('settings')">
                     <img height="30px"
                          width="30px"
                          src="{{url_for('static', filename='baseline_settings_white_24dp.png')}}">
@@ -42,81 +42,6 @@
                          width="30px"
                          src="{{url_for('static', filename='camera.png')}}">
                 </button>
-            </div>
-        </div>
-    </div>
-
-    <div class="container2">
-        <div class="row">
-            <div class="column">
-                <div class="container param" id="param">
-                    <div class="settings">
-                        <h3>paramètres</h3>
-                        <div style="height: 100%">
-                            <form id="formSettings" name="config" method="post" action="/update_config/">
-                                <article>
-                                    <label for="ip">Adresse IP de la caméra</label>
-                                    <input type="text" name="ip" id="ip" placeholder="adresse IP">
-                                </article>
-
-                                <article>
-                                    <label for="logLevel">Log level</label>
-                                    <select id="logLevel" name="logLevel">
-                                        <option value="">--Veuillez choisir une option--</option>
-                                        <option value="Faible">Faible</option>
-                                        <option value="Moyen">Moyen</option>
-                                        <option value="Haut">Élevé</option>
-                                    </select>
-                                </article>
-
-                                <article>
-                                    <label for="purge">Nombre de jours avant la purge</label>
-                                    <input id="purge" type="number" value="{{ purge }}" name="purge"
-                                           placeholder="ex: 12">
-                                </article>
-
-                                <article>
-                                    <label for="detection">Détection</label>
-                                    <label id="detection" class="switch">
-                                        <input id="detectionCB" type="checkbox" name="detection">
-                                        <span class="slider round"></span>
-                                    </label>
-                                </article>
-
-                                <article>
-                                    <label for="jalerte">Alerte</label>
-                                    <label id="jalerte" class="switch">
-                                        <input id="jalerteCB" type="checkbox" name="jalerte">
-                                        <span class="slider round"></span>
-                                    </label>
-                                </article>
-
-                                <article>
-                                    <label for="recording">Enregistrement</label>
-                                    <label id="recording" class="switch">
-                                        <input id="recordingCB" type="checkbox" name="recording">
-                                        <span class="slider round"></span>
-                                    </label>
-                                </article>
-
-                                <article>
-                                    <label for="stream">Live</label>
-                                    <label id="stream" class="switch">
-                                        <input id="streamCB" type="checkbox" name="stream">
-                                        <span class="slider round"></span>
-                                    </label>
-                                </article>
-
-                                <iframe id="settings" class="iframeSettings" height="660px"></iframe>
-
-                                <article>
-                                    <input type="submit" name="valider" value="Valider" id="valider"/>
-                                </article>
-                            </form>
-
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>

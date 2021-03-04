@@ -1,13 +1,4 @@
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-button,
-option,
-label {
+h1, h2, h3, h4, h5, h6, p, button, option, label {
     font-family: Monospace, sans-serif;
 }
 
@@ -15,7 +6,7 @@ html {
     scroll-behavior: smooth;
 }
 
-body {
+body.main {
     background: #242424;
     background: -webkit-linear-gradient(to left, #242424, #222222);
     margin: 0;
@@ -139,11 +130,10 @@ header a {
 }
 
 .container2 {
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    background: -webkit-linear-gradient(to left, #242424, #222222);
+    width: 340px;
+    height: 100%;
     text-align: center;
+    margin: 0;
 }
 
 .param {

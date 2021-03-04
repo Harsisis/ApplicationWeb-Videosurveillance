@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Paramètres</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style/style.css') }}">
+    <script src="{{ url_for('static',filename='script/script.js') }}"></script>
+</head>
+<body onpageshow="onShow('{{ ip_camera }}', '{{ log_level }}', '{{ detection }}', '{{ jeealert }}', '{{ recording }}', '{{ streaming }}')">
+
+    <div class="container2">
+        <div class="row">
+            <div>
+                <div class="container2" id="param">
+                    <div class="settings">
+                        <h3>paramètres</h3>
+                        <div style="height: 100%">
+                            <form id="formSettings" name="config" method="post" action="/update_config/">
+                                <article>
+                                    <label for="ip">Adresse IP de la caméra</label>
+                                    <input type="text" name="ip" id="ip" placeholder="adresse IP" value="{{ ip_camera }}">
+                                </article>
+
+                                <article>
+                                    <label for="logLevel">Log level</label>
+                                    <select id="logLevel" name="logLevel">
+                                        <option value="">--Veuillez choisir une option--</option>
+                                        <option value="Faible">Faible</option>
+                                        <option value="Moyen">Moyen</option>
+                                        <option value="Haut">Élevé</option>
+                                    </select>
+                                </article>
+
+                                <article>
+                                    <label for="purge">Nombre de jours avant la purge</label>
+                                    <input id="purge" type="number" value="{{ purge }}" name="purge"
+                                           placeholder="ex: 12">
+                                </article>
+
+                                <article>
+                                    <label for="detection">Détection</label>
+                                    <label id="detection" class="switch">
+                                        <input id="detectionCB" type="checkbox" name="detection">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </article>
+
+                                <article>
+                                    <label for="jalerte">Alerte</label>
+                                    <label id="jalerte" class="switch">
+                                        <input id="jalerteCB" type="checkbox" name="jalerte">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </article>
+
+                                <article>
+                                    <label for="recording">Enregistrement</label>
+                                    <label id="recording" class="switch">
+                                        <input id="recordingCB" type="checkbox" name="recording">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </article>
+
+                                <article>
+                                    <label for="stream">Live</label>
+                                    <label id="stream" class="switch">
+                                        <input id="streamCB" type="checkbox" name="stream">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </article>
+
+                                <iframe id="settings" class="iframeSettings" height="660px"></iframe>
+
+                                <article>
+                                    <input type="submit" name="valider" value="Valider" id="valider"/>
+                                </article>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -46,6 +46,7 @@ function showParam () {
     } else {
         iframeParam.style.display = "none";
     }
+
 }
 
 function showVideo (url) {
@@ -76,3 +77,14 @@ function onFailed(error) {
     console.log(`Download failed: ${error}`);
 }
 
+function popup (page) {
+    var w = window.open(page,'Paramètres', 'top = 560, left = 1100', 'width = 800, height = 943' );
+    w.document.close();
+    w.focus();
+}
+
+function fermer (page) {
+    if (window.document) {
+        window.close();
+    }
+}

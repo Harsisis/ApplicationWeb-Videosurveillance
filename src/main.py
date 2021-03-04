@@ -46,13 +46,13 @@ def createListVid():
 app = Flask(__name__)
 
 # app.config Gauthier
-app.config["CLIENT_Files"] = "D:/Bureau/travail/0_PROJETS/ApplicationWeb-Videosurveillance/src/static/client/files"
+#app.config["CLIENT_Files"] = "D:/Bureau/travail/0_PROJETS/ApplicationWeb-Videosurveillance/src/static/client/files"
 
 # app.config Yann
 # app.config["CLIENT_Files"] = "H:/IUT/Portfolio/ApplicationWeb-Videosurveillance/src/static/client/files"
 
 # app.config Nicolas
-# app.config["CLIENT_Files"] = "C:/Users/nicoc/PycharmProjects/ApplicationWeb-Videosurveillance/src/static/client/files"
+app.config["CLIENT_Files"] = "C:/Users/nicoc/PycharmProjects/ApplicationWeb-Videosurveillance/src/static/client/files"
 
 # app.config Antoine
 # app.config["CLIENT_Files"] = "C:/Users/Tonio/Desktop/Projetlol/ApplicationWeb-Videosurveillance/src/static/client/files"
@@ -77,7 +77,7 @@ def get_video(video_name):
 @app.route("/update_config/", methods=['POST'])
 def update_config():
     request.form.get('config', '')
-    with open('D:/Bureau/travail/0_PROJETS/ApplicationWeb-Videosurveillance/src/config.yaml') as file:
+    with open('C:/Users/nicoc/PycharmProjects/ApplicationWeb-Videosurveillance/src/config.yaml') as file:
         config_yaml = yaml.full_load(file)
     config_yaml['ip_address'] = request.form.get("ip", "")
     config_yaml['log_level'] = request.form.get("logLevel", "Faible")
@@ -87,7 +87,7 @@ def update_config():
     config_yaml['recording'] = True if request.form.get('recording', False) else False
     config_yaml['streaming'] = True if request.form.get('stream', False) else False
 
-    with open('D:/Bureau/travail/0_PROJETS/ApplicationWeb-Videosurveillance/src/config.yaml', 'w') as wfile:
+    with open('C:/Users/nicoc/PycharmProjects/ApplicationWeb-Videosurveillance/src/config.yaml', 'w') as wfile:
         yaml.dump(config_yaml, wfile)
 
     return redirect("/")
@@ -95,7 +95,7 @@ def update_config():
 
 @app.route("/")
 def home():
-    with open('D:/Bureau/travail/0_PROJETS/ApplicationWeb-Videosurveillance/src/config.yaml') as file:
+    with open('C:/Users/nicoc/PycharmProjects/ApplicationWeb-Videosurveillance/src/config.yaml') as file:
         config_yaml = yaml.full_load(file)
     return render_template("main.html",
                            videos=createListVid(),
@@ -107,6 +107,19 @@ def home():
                            recording=config_yaml['recording'],
                            streaming=config_yaml['streaming'])
 
+
+@app.route("/settings/")
+def settings():
+    with open('C:/Users/nicoc/PycharmProjects/ApplicationWeb-Videosurveillance/src/config.yaml') as file:
+        config_yaml = yaml.full_load(file)
+    return render_template("param.html",
+                           ip_camera=config_yaml['ip_address'],
+                           purge=config_yaml['purge'],
+                           detection=config_yaml['detection'],
+                           jeealert=config_yaml['jeealert'],
+                           log_level=config_yaml['log_level'],
+                           recording=config_yaml['recording'],
+                           streaming=config_yaml['streaming'])
 
 if __name__ == "__main__":
     app.run()
