@@ -112,7 +112,7 @@ function onFailed(error) {
 }
 
 function popup(page) {
-    var w = window.open(page, 'Paramètres', 'top = 560, left = 1100', 'width = 800, height = 943');
+    var w = window.open(page, 'Paramètres', 'top = 560, left = 100', 'width = 600, height = 800');
     w.document.close();
     w.focus();
 }

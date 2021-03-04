@@ -1,7 +1,13 @@
-@font-face{
-font-family: Roboto;
-src: url('font/RobotoMono-Medium.ttf');
-font-weight: bold;}
+@font-face {
+    font-family: Roboto;
+    src: url('font/RobotoMono-Medium.ttf');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: Monoton;
+    src: url("font/AllertaStencil-Regular.ttf");
+}
 
 html {
     scroll-behavior: smooth;
@@ -74,7 +80,6 @@ header a {
 }
 
 
-
 .right {
     width: 20%;
 }
@@ -131,60 +136,24 @@ header a {
     padding-bottom: 2%;
 }
 
-.container h2 {
+.titre {
+    font-family: 'Monoton', sans-serif;
+}
+
+.container h2, .container h4, .container p, .container button, .container span {
     font-family: 'Roboto', sans-serif;
 }
 
-.container h4 {
-    font-family: 'Roboto', sans-serif;
-}
-
-.container p{
-    font-family: 'Roboto', sans-serif;
-}
-
-.container button{
-    font-family: 'Roboto', sans-serif;
-}
-
-.container span{
+.historique h2, .historique h4, .historique span {
     font-family: 'Roboto', sans-serif;
 }
 
 .container2 {
-    width: 340px;
     height: 100%;
     margin: 0;
 }
 
-.container2 h3 {
-    font-family: 'Calibri', sans-serif;
-    font-weight: bold;
-    margin-left: 15px;
-    margin-top: 10px;
-}
-
-.container2 p {
-    font-family: 'Calibri', sans-serif;
-    font-weight: bold;
-    margin-left: 15px;
-    margin-top: 10px;
-}
-.container2 option {
-    font-family: 'Calibri', sans-serif;
-    font-weight: bold;
-    margin-left: 15px;
-    margin-top: 10px;
-}
-
-.container2 label {
-    font-family: 'Calibri', sans-serif;
-    font-weight: bold;
-    margin-left: 15px;
-    margin-top: 10px;
-}
-
-.container2 select {
+.container2 h3, .container2 p, .container2 option, .container2 label, .container2 select {
     font-family: 'Calibri', sans-serif;
     font-weight: bold;
     margin-left: 15px;
@@ -213,27 +182,26 @@ header a {
     margin-top: 10px;
 }
 
-.btn2{
+.btn2 {
     font-family: 'Calibri', sans-serif;
     font-weight: bold;
     text-align: center;
     margin-top: 1.5%;
     margin-bottom: 1.5%;
+    margin-left: 0;
+}
+
+.btn2 div {
+    display: inline;
 }
 
 .param {
     display: none;
 }
 
-.settings {
-    height: 943px;
-    width: 200%;
-}
-
 .settings h3, .btn {
     text-align: center;
 }
-
 
 
 .settings div form article label {
@@ -242,12 +210,12 @@ header a {
 }
 
 .settings div form article input:not(.swagg) {
-    border : none;
+    border: none;
     border-bottom: #d41010 2px solid;
 }
 
 .settings div form article select {
-    border : none;
+    border: none;
     border-bottom: #d41010 2px solid;
 }
 
@@ -292,6 +260,7 @@ header a {
 article {
     margin-top: 1.5%;
     margin-bottom: 1.5%;
+    margin-left: 270px;
 }
 
 .historique {
@@ -348,15 +317,15 @@ article {
     transition: .4s;
 }
 
-input:checked+.slider {
+input:checked + .slider {
     background-color: #d41010;
 }
 
-input:focus+.slider {
+input:focus + .slider {
     box-shadow: 0 0 1px #d41010;
 }
 
-input:checked+.slider:before {
+input:checked + .slider:before {
     -webkit-transform: translateX(24px);
     -ms-transform: translateX(24px);
     transform: translateX(24px);

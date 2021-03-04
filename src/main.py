@@ -96,7 +96,7 @@ def update_config():
     with open(path_yaml, 'w') as wfile:
         yaml.dump(config_yaml, wfile)
 
-    return redirect("/")
+    return redirect("/settings/")
 
 
 @app.route("/")
