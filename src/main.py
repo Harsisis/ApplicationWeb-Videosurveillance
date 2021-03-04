@@ -1,3 +1,6 @@
+import os
+from datetime import datetime
+
 from flask import Flask, render_template, redirect, abort, send_from_directory, request, config
 from os import listdir
 from os.path import isfile, join
@@ -7,25 +10,17 @@ import yaml
 
 # constructeur classe vidéos
 class caseVid:
-    def __init__(self, linkPic, linkVid, title):
+    def __init__(self, linkPic, linkVid, title, date):
         self.linkPic = linkPic
         self.linkVid = linkVid
         self.title = title
+        self.date = date
 
+def get_date(video):
+    return video.date
 
 def createListVid():
-    global liste_files
-
-    v1 = caseVid("http://127.0.0.1:5000/get-image/backgroundOBS.jpg", "http://127.0.0.1:5000/get-video/deamon.mp4",
-                 "vidéo du gamin")
-    v2 = caseVid("http://127.0.0.1:5000/get-image/backgroundOBS.jpg", "http://127.0.0.1:5000/get-video/franklin.mp4",
-                 "vidéo du monsieur qui dance")
-    v3 = caseVid("http://127.0.0.1:5000/get-image/backgroundOBS.jpg", "http://127.0.0.1:5000/get-video/deamon.mp4",
-                 "vidéo dzadaz dada")
-    v4 = caseVid("http://127.0.0.1:5000/get-image/backgroundOBS.jpg", "http://127.0.0.1:5000/get-video/deamon.mp4",
-                 "vidéo azdfvfdggegeg")
-
-    liste_files = [v1, v2, v3, v4]
+    liste_files = []
 
     all_files = listdir(app.config["CLIENT_Files"])
 
@@ -37,8 +32,9 @@ def createListVid():
                     nom_img = img
                     liste_files.append(caseVid("http://127.0.0.1:5000/get-image/" + nom_img,
                                                "http://127.0.0.1:5000/get-video/" + nom_vid,
-                                               nom_vid[:len(nom_vid) - 4]))
-
+                                               nom_vid[:len(nom_vid) - 4],
+                                               datetime.fromtimestamp(os.stat(app.config["CLIENT_Files"] + '/' + nom_vid).st_ctime)))
+    liste_files.sort(key=get_date, reverse=True)
     return liste_files
 
 
@@ -46,17 +42,24 @@ def createListVid():
 app = Flask(__name__)
 
 # app.config Gauthier
-#app.config["CLIENT_Files"] = "D:/Bureau/travail/0_PROJETS/ApplicationWeb-Videosurveillance/src/static/client/files"
+app.config["CLIENT_Files"] = "D:/Bureau/travail/0_PROJETS/ApplicationWeb-Videosurveillance/src/static/client/files"
+path_yaml = 'D:/Bureau/travail/0_PROJETS/ApplicationWeb-Videosurveillance/src/config.yaml'
+
 
 # app.config Yann
 # app.config["CLIENT_Files"] = "H:/IUT/Portfolio/ApplicationWeb-Videosurveillance/src/static/client/files"
+# path_yaml = ''
 
 # app.config Nicolas
-app.config["CLIENT_Files"] = "C:/Users/nicoc/PycharmProjects/ApplicationWeb-Videosurveillance/src/static/client/files"
+# app.config["CLIENT_Files"] = "C:/Users/nicoc/PycharmProjects/ApplicationWeb-Videosurveillance/src/static/client/files"
+# path_yaml = ''
 
 # app.config Antoine
 # app.config["CLIENT_Files"] = "C:/Users/Tonio/Desktop/Projetlol/ApplicationWeb-Videosurveillance/src/static/client/files"
+# path_yaml = ''
 
+# app.config Docker
+app.config["CLIENT_Files"] = "static/client/files"
 
 @app.route("/get-image/<image_name>")
 def get_image(image_name):
@@ -77,7 +80,7 @@ def get_video(video_name):
 @app.route("/update_config/", methods=['POST'])
 def update_config():
     request.form.get('config', '')
-    with open('C:/Users/nicoc/PycharmProjects/ApplicationWeb-Videosurveillance/src/config.yaml') as file:
+    with open(path_yaml) as file:
         config_yaml = yaml.full_load(file)
     config_yaml['ip_address'] = request.form.get("ip", "")
     config_yaml['log_level'] = request.form.get("logLevel", "Faible")
@@ -87,7 +90,7 @@ def update_config():
     config_yaml['recording'] = True if request.form.get('recording', False) else False
     config_yaml['streaming'] = True if request.form.get('stream', False) else False
 
-    with open('C:/Users/nicoc/PycharmProjects/ApplicationWeb-Videosurveillance/src/config.yaml', 'w') as wfile:
+    with open(path_yaml, 'w') as wfile:
         yaml.dump(config_yaml, wfile)
 
     return redirect("/")
@@ -95,7 +98,7 @@ def update_config():
 
 @app.route("/")
 def home():
-    with open('C:/Users/nicoc/PycharmProjects/ApplicationWeb-Videosurveillance/src/config.yaml') as file:
+    with open(path_yaml) as file:
         config_yaml = yaml.full_load(file)
     return render_template("main.html",
                            videos=createListVid(),
@@ -107,6 +110,8 @@ def home():
                            recording=config_yaml['recording'],
                            streaming=config_yaml['streaming'])
 
+def getURL():
+    return request.base_url
 
 @app.route("/settings/")
 def settings():
