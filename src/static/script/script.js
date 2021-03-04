@@ -83,7 +83,7 @@ function showParam() {
 
 }
 
-function showVideo(url) {
+function showVideo(url, title) {
     let live = document.getElementById("live");
     let snap = document.getElementById("snap");
     if (snap.style.display === "none") {
@@ -91,6 +91,7 @@ function showVideo(url) {
         snap.style.display = "block";
     }
     snap.src = url;
+    document.getElementById("titleVideo").innerHTML = title;
 }
 
 function showLive(ip) {
@@ -101,6 +102,7 @@ function showLive(ip) {
         snap.style.display = "block";
     }
     snap.src = 'http://' + ip + '/videofeed';
+    document.getElementById("titleVideo").innerHTML = "Vidéo en direct"
 }
 
 function onStartedDownload(id) {

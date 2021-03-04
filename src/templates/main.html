@@ -30,7 +30,7 @@
         </div>
 
         <div class="title" style="margin-bottom: 10%; margin-top: 0.5%">
-            <h2 style="float: left;margin-left: 10%">Vidéo en direct</h2>
+            <h2 id="titleVideo" style="float: left;margin-left: 10%">Vidéo en direct</h2>
             <div class="go-live" onclick="showLive('{{ ip_camera }}')">
                 <img class="img_live" width="10px" height="10px" src="{{url_for('static', filename='live.png')}}"
                      alt="img" style="display: inline-block;">
@@ -57,7 +57,7 @@
         <h2 class="date">Vidéos</h2>
 
         {% for video in videos %}
-        <div class="vignette row" onclick="showVideo('{{ video.linkVid }}')">
+        <div class="vignette row" onclick="showVideo('{{ video.linkVid }}', '{{ video.title }}')">
             <div class="column">
                 <img src="{{ video.linkPic }}" width="100px">
             </div>
