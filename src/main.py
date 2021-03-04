@@ -16,8 +16,10 @@ class caseVid:
         self.title = title
         self.date = date
 
+
 def get_date(video):
     return video.date
+
 
 def createListVid():
     liste_files = []
@@ -33,7 +35,8 @@ def createListVid():
                     liste_files.append(caseVid("http://127.0.0.1:5000/get-image/" + nom_img,
                                                "http://127.0.0.1:5000/get-video/" + nom_vid,
                                                nom_vid[:len(nom_vid) - 4],
-                                               datetime.fromtimestamp(os.stat(app.config["CLIENT_Files"] + '/' + nom_vid).st_ctime)))
+                                               datetime.fromtimestamp(
+                                                   os.stat(app.config["CLIENT_Files"] + '/' + nom_vid).st_ctime)))
     liste_files.sort(key=get_date, reverse=True)
     return liste_files
 
@@ -44,7 +47,6 @@ app = Flask(__name__)
 # app.config Gauthier
 app.config["CLIENT_Files"] = "D:/Bureau/travail/0_PROJETS/ApplicationWeb-Videosurveillance/src/static/client/files"
 path_yaml = 'D:/Bureau/travail/0_PROJETS/ApplicationWeb-Videosurveillance/src/config.yaml'
-
 
 # app.config Yann
 # app.config["CLIENT_Files"] = "H:/IUT/Portfolio/ApplicationWeb-Videosurveillance/src/static/client/files"
@@ -60,6 +62,7 @@ path_yaml = 'D:/Bureau/travail/0_PROJETS/ApplicationWeb-Videosurveillance/src/co
 
 # app.config Docker
 app.config["CLIENT_Files"] = "static/client/files"
+
 
 @app.route("/get-image/<image_name>")
 def get_image(image_name):
@@ -110,12 +113,14 @@ def home():
                            recording=config_yaml['recording'],
                            streaming=config_yaml['streaming'])
 
+
 def getURL():
     return request.base_url
 
+
 @app.route("/settings/")
 def settings():
-    with open('C:/Users/nicoc/PycharmProjects/ApplicationWeb-Videosurveillance/src/config.yaml') as file:
+    with open(path_yaml) as file:
         config_yaml = yaml.full_load(file)
     return render_template("param.html",
                            ip_camera=config_yaml['ip_address'],
@@ -125,6 +130,7 @@ def settings():
                            log_level=config_yaml['log_level'],
                            recording=config_yaml['recording'],
                            streaming=config_yaml['streaming'])
+
 
 if __name__ == "__main__":
     app.run()

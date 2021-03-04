@@ -32,6 +32,40 @@ function onShow (ip, log_level, detection, jeealert, recording, streaming) {
     console.log(streaming);
 }
 
+function onShow2 (ip, log_level, detection, jeealert, recording, streaming) {
+
+    document.getElementById("ip").value = ip;
+    document.getElementById("settings").src = 'http://' + ip + '/settings_window.html';
+
+    document.getElementById("logLevel").value = log_level;
+
+    if (detection === "True" || detection === "true") {
+        document.getElementById("detectionCB").checked = true
+    } else{
+        document.getElementById("detectionCB").checked = false
+    }
+    if (jeealert === "True" || jeealert === "true") {
+        document.getElementById("jalerteCB").checked = true
+    } else{
+        document.getElementById("jalerteCB").checked = false
+    }
+    if (recording === "True" || recording === "true") {
+        document.getElementById("recordingCB").checked = true
+    } else{
+        document.getElementById("recordingCB").checked = false
+    }
+    if (streaming === "True" || streaming === "true") {
+        document.getElementById("streamCB").checked = true
+    } else{
+        document.getElementById("streamCB").checked = false
+    }
+    console.log(detection);
+    console.log(jeealert);
+    console.log(recording);
+    console.log(streaming);
+}
+
+
 function takePic (ipadr) {
     var choice = window.confirm("Voulez vous voir la photo ?");
     if (choice) {

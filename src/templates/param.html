@@ -6,7 +6,7 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style/style.css') }}">
     <script src="{{ url_for('static',filename='script/script.js') }}"></script>
 </head>
-<body onpageshow="onShow('{{ ip_camera }}', '{{ log_level }}', '{{ detection }}', '{{ jeealert }}', '{{ recording }}', '{{ streaming }}')">
+<body onpageshow="onShow2('{{ ip_camera }}', '{{ log_level }}', '{{ detection }}', '{{ jeealert }}', '{{ recording }}', '{{ streaming }}')">
 
     <div class="container2">
         <div class="row">
@@ -18,7 +18,7 @@
                             <form id="formSettings" name="config" method="post" action="/update_config/">
                                 <article>
                                     <label for="ip">Adresse IP de la caméra</label>
-                                    <input type="text" name="ip" id="ip" placeholder="adresse IP" value="{{ ip_camera }}">
+                                    <input type="text" name="ip" id="ip" placeholder="adresse IP">
                                 </article>
 
                                 <article>
