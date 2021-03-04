@@ -4,4 +4,4 @@ jeealert: true
 log_level: Faible
 purge: '31'
 recording: false
-streaming: false
+streaming: true
