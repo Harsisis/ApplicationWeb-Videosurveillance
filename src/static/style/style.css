@@ -137,7 +137,6 @@ header a {
 .container2 {
     width: 340px;
     height: 100%;
-    text-align: center;
     margin: 0;
 }
 
@@ -149,6 +148,22 @@ header a {
     height: 943px;
     width: 200%;
 }
+
+.settings div form article label {
+
+    size: 1px;
+}
+
+.settings div form article input {
+    border : none;
+    border-bottom: #2fa5dd 2px solid;
+}
+
+.settings div form article select {
+    border : none;
+    border-bottom: #2fa5dd 2px solid;
+}
+
 
 .img_live {
     height: 20%;
