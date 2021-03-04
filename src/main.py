@@ -1,6 +1,3 @@
-import os.path
-from datetime import time, datetime
-
 from flask import Flask, render_template, redirect, abort, send_from_directory, request, config
 from os import listdir
 from os.path import isfile, join
@@ -58,6 +55,8 @@ path_yaml = 'D:/Bureau/travail/0_PROJETS/ApplicationWeb-Videosurveillance/src/co
 # app.config["CLIENT_Files"] = "C:/Users/Tonio/Desktop/Projetlol/ApplicationWeb-Videosurveillance/src/static/client/files"
 # path_yaml = ''
 
+# app.config Docker
+app.config["CLIENT_Files"] = "static/client/files"
 
 @app.route("/get-image/<image_name>")
 def get_image(image_name):
@@ -108,6 +107,8 @@ def home():
                            recording=config_yaml['recording'],
                            streaming=config_yaml['streaming'])
 
+def getURL():
+    return request.base_url
 
 if __name__ == "__main__":
     app.run()
