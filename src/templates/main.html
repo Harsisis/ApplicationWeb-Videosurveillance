@@ -5,14 +5,19 @@
     <title>test webcam IP</title>
     <style type="text/css"></style>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style/style.css') }}">
-    <link rel="icon" href="{{ url_for('static', filename='Pioche_en_Netherite.ico') }}"/>
+    <link rel="icon" href="{{ url_for('static', filename='logo.ico') }}"/>
     <script src="{{ url_for('static',filename='script/script.js') }}"></script>
 </head>
 <body onpageshow="onShow('{{ ip_camera }}', '{{ log_level }}', '{{ detection }}', '{{ jeealert }}', '{{ recording }}', '{{ streaming }}')">
 <header>
     <div>
         <ul>
-            <li><h3>Vidéo surveillance</h3></li>
+            <li>
+                <div id="photo" style="text-align: center">
+                    <img style="vertical-align:middle; width: 70px; height: 70px; margin-right: 3%" src="{{url_for('static', filename='logo.png')}}" alt="">
+                    <span style="vertical-align:middle; font-size: xx-large">Vidéo surveillance</span>
+                </div>
+            </li>
         </ul>
     </div>
 </header>
@@ -124,8 +129,7 @@
 
 <div class="superCol right">
     <div class="historique">
-        <h2 class="date">Aujourd'hui</h2>
-        <h2 class="date">Hier</h2>
+        <h2 class="date">Vidéos</h2>
 
         {% for video in videos %}
         <div class="vignette row" onclick="showVideo('{{ video.linkVid }}')">
@@ -134,6 +138,7 @@
             </div>
             <div class="column">
                 <h4>{{ video.title }}</h4>
+                <span>{{ video.date }}</span>
             </div>
         </div>
         {% endfor %}
