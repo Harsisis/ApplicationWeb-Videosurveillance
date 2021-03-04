@@ -18,7 +18,7 @@
                             <form id="formSettings" name="config" method="post" action="/update_config/">
                                 <article>
                                     <label for="ip">Adresse IP de la caméra</label>
-                                    <input type="text" name="ip" id="ip" placeholder="adresse IP">
+                                    <input class="btn1" type="text" name="ip" id="ip" placeholder="adresse IP">
                                 </article>
 
                                 <article>
@@ -33,14 +33,14 @@
 
                                 <article>
                                     <label for="purge">Nombre de jours avant la purge</label>
-                                    <input id="purge" type="number" value="{{ purge }}" name="purge"
+                                    <input class="btn1" id="purge" type="number" value="{{ purge }}" name="purge"
                                            placeholder="ex: 12">
                                 </article>
 
                                 <article>
                                     <label for="detection">Détection</label>
                                     <label id="detection" class="switch">
-                                        <input id="detectionCB" type="checkbox" name="detection">
+                                        <input class="btn1" id="detectionCB" type="checkbox" name="detection">
                                         <span class="slider round"></span>
                                     </label>
                                 </article>
@@ -48,7 +48,7 @@
                                 <article>
                                     <label for="jalerte">Alerte</label>
                                     <label id="jalerte" class="switch">
-                                        <input id="jalerteCB" type="checkbox" name="jalerte">
+                                        <input class="btn1" id="jalerteCB" type="checkbox" name="jalerte">
                                         <span class="slider round"></span>
                                     </label>
                                 </article>
@@ -56,7 +56,7 @@
                                 <article>
                                     <label for="recording">Enregistrement</label>
                                     <label id="recording" class="switch">
-                                        <input id="recordingCB" type="checkbox" name="recording">
+                                        <input class="btn1" id="recordingCB" type="checkbox" name="recording">
                                         <span class="slider round"></span>
                                     </label>
                                 </article>
@@ -64,15 +64,15 @@
                                 <article>
                                     <label for="stream">Live</label>
                                     <label id="stream" class="switch">
-                                        <input id="streamCB" type="checkbox" name="stream">
+                                        <input class="btn1" id="streamCB" type="checkbox" name="stream">
                                         <span class="slider round"></span>
                                     </label>
                                 </article>
 
                                 <iframe id="settings" class="iframeSettings" height="660px"></iframe>
 
-                                <article>
-                                    <input type="submit" name="valider" value="Valider" id="valider"/>
+                                <article class="btn2">
+                                    <input  type="submit" name="valider" value="Valider" id="valider"/>
                                 </article>
                             </form>
 

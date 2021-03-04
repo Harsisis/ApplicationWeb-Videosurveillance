@@ -3,10 +3,6 @@ font-family: Roboto;
 src: url('font/RobotoMono-Medium.ttf');
 font-weight: bold;}
 
-h1, h2, h3, h4, h5, h6, p, button, option, label, span, input, select, option {
-    font-family: 'Roboto', sans-serif;
-}
-
 html {
     scroll-behavior: smooth;
 }
@@ -77,6 +73,8 @@ header a {
     float: left;
 }
 
+
+
 .right {
     width: 20%;
 }
@@ -133,10 +131,79 @@ header a {
     padding-bottom: 2%;
 }
 
+.container h2 {
+    font-family: 'Roboto', sans-serif;
+}
+
+.container h4 {
+    font-family: 'Roboto', sans-serif;
+}
+
+.container p{
+    font-family: 'Roboto', sans-serif;
+}
+
+.container button{
+    font-family: 'Roboto', sans-serif;
+}
+
+.container span{
+    font-family: 'Roboto', sans-serif;
+}
+
 .container2 {
     width: 340px;
     height: 100%;
     margin: 0;
+}
+
+.container2 h3 {
+    font-family: 'Calibri', sans-serif;
+    font-weight: bold;
+    margin-left: 15px;
+    margin-top: 10px;
+}
+
+.container2 p {
+    font-family: 'Calibri', sans-serif;
+    font-weight: bold;
+    margin-left: 15px;
+    margin-top: 10px;
+}
+.container2 option {
+    font-family: 'Calibri', sans-serif;
+    font-weight: bold;
+    margin-left: 15px;
+    margin-top: 10px;
+}
+
+.container2 label {
+    font-family: 'Calibri', sans-serif;
+    font-weight: bold;
+    margin-left: 15px;
+    margin-top: 10px;
+}
+
+.container2 select {
+    font-family: 'Calibri', sans-serif;
+    font-weight: bold;
+    margin-left: 15px;
+    margin-top: 10px;
+}
+
+.container2.btn1 {
+    font-family: 'Calibri', sans-serif;
+    font-weight: bold;
+    margin-left: 15px;
+    margin-top: 10px;
+}
+
+.btn2{
+    font-family: 'Calibri', sans-serif;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 1.5%;
+    margin-bottom: 1.5%;
 }
 
 .param {
@@ -148,6 +215,12 @@ header a {
     width: 200%;
 }
 
+.settings h3, .btn {
+    text-align: center;
+}
+
+
+
 .settings div form article label {
 
     size: 1px;
@@ -155,12 +228,12 @@ header a {
 
 .settings div form article input {
     border : none;
-    border-bottom: #2fa5dd 2px solid;
+    border-bottom: #5b0b0b 2px solid;
 }
 
 .settings div form article select {
     border : none;
-    border-bottom: #2fa5dd 2px solid;
+    border-bottom: #5b0b0b 2px solid;
 }
 
 
@@ -261,11 +334,11 @@ article {
 }
 
 input:checked+.slider {
-    background-color: #11557C;
+    background-color: #d41010;
 }
 
 input:focus+.slider {
-    box-shadow: 0 0 1px #11557C;
+    box-shadow: 0 0 1px #d41010;
 }
 
 input:checked+.slider:before {
