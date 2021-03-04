@@ -16,13 +16,13 @@ class caseVid:
 def createListVid():
     global liste_files
 
-    v1 = caseVid("http://127.0.0.1:5000/get-image/backgroundOBS.jpg", "http://127.0.0.1:5000/get-video/deamon.mp4",
+    v1 = caseVid(getURL()+"get-image/backgroundOBS.jpg", getURL()+"get-video/deamon.mp4",
                  "vidéo du gamin")
-    v2 = caseVid("http://127.0.0.1:5000/get-image/backgroundOBS.jpg", "http://127.0.0.1:5000/get-video/franklin.mp4",
+    v2 = caseVid(getURL()+"get-image/backgroundOBS.jpg", getURL()+"get-video/franklin.mp4",
                  "vidéo du monsieur qui dance")
-    v3 = caseVid("http://127.0.0.1:5000/get-image/backgroundOBS.jpg", "http://127.0.0.1:5000/get-video/deamon.mp4",
+    v3 = caseVid(getURL()+"get-image/backgroundOBS.jpg", getURL()+"get-video/deamon.mp4",
                  "vidéo dzadaz dada")
-    v4 = caseVid("http://127.0.0.1:5000/get-image/backgroundOBS.jpg", "http://127.0.0.1:5000/get-video/deamon.mp4",
+    v4 = caseVid(getURL()+"get-image/backgroundOBS.jpg", getURL()+"get-video/deamon.mp4",
                  "vidéo azdfvfdggegeg")
 
     liste_files = [v1, v2, v3, v4]
@@ -35,8 +35,8 @@ def createListVid():
             for img in all_files:
                 if nom_vid[:len(nom_vid) - 3] + "jpg" == img:
                     nom_img = img
-                    liste_files.append(caseVid("http://127.0.0.1:5000/get-image/" + nom_img,
-                                               "http://127.0.0.1:5000/get-video/" + nom_vid,
+                    liste_files.append(caseVid(getURL()+"get-image/" + nom_img,
+                                               getURL()+"get-video/" + nom_vid,
                                                nom_vid[:len(nom_vid) - 4]))
 
     return liste_files
@@ -46,7 +46,7 @@ def createListVid():
 app = Flask(__name__)
 
 # app.config Gauthier
-app.config["CLIENT_Files"] = "D:/Bureau/travail/0_PROJETS/ApplicationWeb-Videosurveillance/src/static/client/files"
+# app.config["CLIENT_Files"] = "D:/Bureau/travail/0_PROJETS/ApplicationWeb-Videosurveillance/src/static/client/files"
 
 # app.config Yann
 # app.config["CLIENT_Files"] = "H:/IUT/Portfolio/ApplicationWeb-Videosurveillance/src/static/client/files"
@@ -57,6 +57,8 @@ app.config["CLIENT_Files"] = "D:/Bureau/travail/0_PROJETS/ApplicationWeb-Videosu
 # app.config Antoine
 # app.config["CLIENT_Files"] = "C:/Users/Tonio/Desktop/Projetlol/ApplicationWeb-Videosurveillance/src/static/client/files"
 
+# app.config Docker
+app.config["CLIENT_Files"] = "static/client/files"
 
 @app.route("/get-image/<image_name>")
 def get_image(image_name):
@@ -77,7 +79,7 @@ def get_video(video_name):
 @app.route("/update_config/", methods=['POST'])
 def update_config():
     request.form.get('config', '')
-    with open('D:/Bureau/travail/0_PROJETS/ApplicationWeb-Videosurveillance/src/config.yaml') as file:
+    with open('config.yaml') as file:
         config_yaml = yaml.full_load(file)
     config_yaml['ip_address'] = request.form.get("ip", "")
     config_yaml['log_level'] = request.form.get("logLevel", "Faible")
@@ -87,7 +89,7 @@ def update_config():
     config_yaml['recording'] = True if request.form.get('recording', False) else False
     config_yaml['streaming'] = True if request.form.get('stream', False) else False
 
-    with open('D:/Bureau/travail/0_PROJETS/ApplicationWeb-Videosurveillance/src/config.yaml', 'w') as wfile:
+    with open('config.yaml', 'w') as wfile:
         yaml.dump(config_yaml, wfile)
 
     return redirect("/")
@@ -95,7 +97,7 @@ def update_config():
 
 @app.route("/")
 def home():
-    with open('D:/Bureau/travail/0_PROJETS/ApplicationWeb-Videosurveillance/src/config.yaml') as file:
+    with open('config.yaml') as file:
         config_yaml = yaml.full_load(file)
     return render_template("main.html",
                            videos=createListVid(),
@@ -107,6 +109,8 @@ def home():
                            recording=config_yaml['recording'],
                            streaming=config_yaml['streaming'])
 
+def getURL():
+    return request.base_url
 
 if __name__ == "__main__":
     app.run()
