@@ -45,16 +45,16 @@ def createListVid():
 app = Flask(__name__)
 
 # app.config Gauthier
-# app.config["CLIENT_Files"] = "D:/Bureau/travail/0_PROJETS/ApplicationWeb-Videosurveillance/src/static/client/files"
-# path_yaml = 'D:/Bureau/travail/0_PROJETS/ApplicationWeb-Videosurveillance/src/config.yaml'
+app.config["CLIENT_Files"] = "D:/Bureau/travail/0_PROJETS/ApplicationWeb-Videosurveillance/src/static/client/files"
+path_yaml = 'D:/Bureau/travail/0_PROJETS/ApplicationWeb-Videosurveillance/src/config.yaml'
 
 # app.config Yann
 # app.config["CLIENT_Files"] = "H:/IUT/Portfolio/ApplicationWeb-Videosurveillance/src/static/client/files"
 # path_yaml = ''
 
 # app.config Nicolas
-app.config["CLIENT_Files"] = "C:/Users/nicoc/PycharmProjects/ApplicationWeb-Videosurveillance/src/static/client/files"
-path_yaml = 'C:/Users/nicoc/PycharmProjects/ApplicationWeb-Videosurveillance/src/config.yaml'
+# app.config["CLIENT_Files"] = "C:/Users/nicoc/PycharmProjects/ApplicationWeb-Videosurveillance/src/static/client/files"
+# path_yaml = 'C:/Users/nicoc/PycharmProjects/ApplicationWeb-Videosurveillance/src/config.yaml'
 
 # app.config Antoine
 # app.config["CLIENT_Files"] = "C:/Users/Tonio/Desktop/Projetlol/ApplicationWeb-Videosurveillance/src/static/client/files"
