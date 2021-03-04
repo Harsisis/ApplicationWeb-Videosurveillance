@@ -191,6 +191,21 @@ header a {
     margin-top: 10px;
 }
 
+.swagg {
+    font-size: large;
+    margin: 5%;
+    border: none;
+    background-color: #cccccc;
+    width: 25%;
+    height: 40px;
+    border-radius: 7px;
+}
+
+.swagg:hover {
+    background-color: #d41010;
+    color: white;
+}
+
 .btn1 {
     font-family: 'Calibri', sans-serif;
     font-weight: bold;
@@ -226,14 +241,14 @@ header a {
     size: 1px;
 }
 
-.settings div form article input {
+.settings div form article input:not(.swagg) {
     border : none;
-    border-bottom: #5b0b0b 2px solid;
+    border-bottom: #d41010 2px solid;
 }
 
 .settings div form article select {
     border : none;
-    border-bottom: #5b0b0b 2px solid;
+    border-bottom: #d41010 2px solid;
 }
 
 
