@@ -3,7 +3,7 @@ font-family: Roboto;
 src: url('font/RobotoMono-Medium.ttf');
 font-weight: bold;}
 
-h1, h2, h3, h4, h5, h6, p, button, option, label, span {
+h1, h2, h3, h4, h5, h6, p, button, option, label, span, input, select, option {
     font-family: 'Roboto', sans-serif;
 }
 
@@ -27,7 +27,6 @@ header {
     color: #F5F5F5;
     padding-top: 2%;
     padding-bottom: 2%;
-    height: 5vh;
     margin-bottom: 3em;
 }
 
@@ -90,7 +89,7 @@ header a {
     overflow: hidden;
     position: relative;
     height: 800px;
-    width: 1300px;
+    width: 90%;
     margin-left: auto;
     margin-right: auto;
     margin-top: auto;
